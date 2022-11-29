@@ -52,7 +52,7 @@ jobs:
         mkdir -p ~/work/_temp/_github_home/
         cp -ar ~/.ssh ~/work/_temp/_github_home/
 
-    - uses: actions/checkout@v3
+    # - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
         python-version: '3.8'
