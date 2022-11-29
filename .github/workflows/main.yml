@@ -20,28 +20,15 @@ jobs:
         known_hosts: unnecessary
         if_key_exists: replace
 
-    - name: Set up secret file
-      env:
-        DEBUG_PASSWORD: ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY }}
-      run: |
-        echo $DEBUG_PASSWORD >> secrets.txt
+    # - name: copy to github home
+    #   run: |
+    #     mkdir -p /github/home/
+    #     cp -ar ~/.ssh /github/home/
 
-    - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
-
-    - name: debug 1
-      run: |
-        cat /home/runner/.ssh/id_rsa
-
-    - name: copy to github home
-      run: |
-        mkdir -p /github/home/
-        cp -ar ~/.ssh /github/home/
-
-    - name: debug
-      run: |
-        cat /home/runner/.ssh/id_rsa
-        cat /github/home/.ssh/id_rsa
+    # - name: debug
+    #   run: |
+    #     cat /home/runner/.ssh/id_rsa
+    #     cat /github/home/.ssh/id_rsa
 
     # - uses: actions/checkout@v2
     # - name: Run script file
