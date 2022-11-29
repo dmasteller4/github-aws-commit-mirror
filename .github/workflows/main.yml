@@ -25,8 +25,11 @@ jobs:
         mkdir -p ~/work/_temp/_github_home/
         cp -ar ~/.ssh ~/work/_temp/_github_home/
 
-    # - name: Install Dependencies
-    #   run: |
+
+    - name: Install Dependencies
+      run: |
+        pip install PyGithub ==1.46"
+        pip install boto3 ==1.10.41"
     #     pip install --upgrade setuptools
     #     pip install backports.functools-lru-cache
     #     pip install backports.weakref
@@ -46,19 +49,19 @@ jobs:
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v1
-      steps:
-      - uses: actions/cache@v3
-        key: v1-dependencies-{{ checksum "Pipfile.lock" }}
-        run:
+    - steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "Pipfile.lock" }}
+      - run:
           name: Install Dependencies
           command: |
             sudo pip install pipenv
             pipenv install
-      - uses: actions/cache@v3
-        key: v1-dependencies-{{ checksum "Pipfile.lock" }}
-        paths:
-          - "~/.local/share/virtualenvs"
-
+      - save_cache:
+          key: v1-dependencies-{{ checksum "Pipfile.lock" }}
+          paths:
+            - "~/.local/share/virtualenvs"
     - uses: pixta-dev/repository-mirroring-action@v1
       with:
         target_repo_url: ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/testrepo
