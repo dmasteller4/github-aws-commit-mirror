@@ -2,8 +2,8 @@ from github import Github
 import boto3
 import os
 
-aws_access_key_id = os.getenv('GH_API_TOKEN')
-aws_secret_access_key = os.getenv('GH_API_TOKEN')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 GITHUB_API_TOKEN = os.getenv('GH_API_TOKEN')
 print("Github token: " + GITHUB_API_TOKEN)
 
