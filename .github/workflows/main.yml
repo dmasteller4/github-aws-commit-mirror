@@ -11,23 +11,12 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-18.04
     steps:
-    # - name: apply git config
-    #   run: |
-    #     git config --global url."git@github.com:".insteadOf "https://github.com/"
-    #     # git config --global --add safe.directory /github/workspace
-
-    # - name: Install SSH key
-    #   uses: shimataro/ssh-key-action@v2
-    #   with:
-    #     key: ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY }}
-    #     name: id_rsa
-    #     known_hosts: unnecessary
-    #     if_key_exists: replace
-
-    - name: ssh
-      run:  |
+    - uses: actions/checkout@v2
+    - name: Run script file
+      run: |
         chmod +x scripts/setup-ssh.sh
         scripts/setup-ssh.sh $SSH_KEY_ID $AWS_DEFAULT_REGION
+      shell: bash
 
     # - name: Debug
     #   run: |
