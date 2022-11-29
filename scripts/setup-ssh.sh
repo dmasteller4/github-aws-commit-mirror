@@ -2,7 +2,7 @@
 # see https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-without-cli.html#setting-up-without-cli-configure-client
  echo "Host git-codecommit.*.amazonaws.com
  User $1
- IdentityFile /home/.ssh/id_rsa" >> /home/circleci/.ssh/config
+ IdentityFile /home/.ssh/id_rsa" >> /home/.ssh/config
 
 # Add CodeCommit Server as Known Host
 ssh-keyscan -H git-codecommit.$2.amazonaws.com >> ~/.ssh/known_hosts
