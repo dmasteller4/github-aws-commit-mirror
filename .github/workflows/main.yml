@@ -25,12 +25,9 @@ jobs:
         mkdir -p ~/work/_temp/_github_home/
         cp -ar ~/.ssh ~/work/_temp/_github_home/
 
-    - name: debug
-      run: |
-        cat ~/work/_temp/_github_home/.ssh/id_rsa
-
     - name: Install Dependencies
       run: |
+        pip install backports.weakref
         sudo pip install pipenv
         pipenv install
 
