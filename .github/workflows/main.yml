@@ -48,17 +48,17 @@ jobs:
     - uses: actions/checkout@v1
     - steps:
       - checkout
-      - restore_cache:
-          key: v1-dependencies-{{ checksum "Pipfile.lock" }}
+      - uses: actions/cache@v3
+        key: v1-dependencies-{{ checksum "Pipfile.lock" }}
       - run:
           name: Install Dependencies
           command: |
             sudo pip install pipenv
             pipenv install
-      - save_cache:
-          key: v1-dependencies-{{ checksum "Pipfile.lock" }}
-          paths:
-            - "~/.local/share/virtualenvs"
+      - uses: actions/cache@v3
+        key: v1-dependencies-{{ checksum "Pipfile.lock" }}
+        paths:
+          - "~/.local/share/virtualenvs"
 
     - uses: pixta-dev/repository-mirroring-action@v1
       with:
