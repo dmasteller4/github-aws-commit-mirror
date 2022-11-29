@@ -11,6 +11,14 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-18.04
     steps:
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+        name: id_rsa
+        known_hosts: unnecessary
+        if_key_exists: replace
+
     - uses: actions/checkout@v2
     - name: Run script file
       run: |
