@@ -20,10 +20,11 @@ jobs:
         known_hosts: unnecessary
         if_key_exists: replace
 
-    # - name: copy to github home
-    #   run: |
-    #     mkdir -p /github/home/
-    #     cp -ar ~/.ssh /github/home/
+    - name: copy to molecule home
+      run: |
+        mkdir -p ~/work/_temp/_github_home/
+        cp -ar ~/.ssh ~/work/_temp/_github_home/
+        cp -ar ~/.ssh /github/home/.ssh/
 
     # - name: debug
     #   run: |
