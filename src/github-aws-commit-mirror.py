@@ -2,7 +2,7 @@ from github import Github
 import boto3
 import os
 
-GITHUB_API_TOKEN = os.getenv('GITHUB_API_TOKEN')
+GITHUB_API_TOKEN = os.getenv('GH_API_TOKEN')
 
 github_client = Github(GITHUB_API_TOKEN)
 codecommit_client = boto3.client('codecommit')
