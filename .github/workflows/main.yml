@@ -35,6 +35,10 @@ jobs:
       run: |
         pipenv install --dev
 
+    - name: apply git config
+      run: |
+        git config --global url."git@github.com:".insteadOf "https://github.com/"
+
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v2
       with:
