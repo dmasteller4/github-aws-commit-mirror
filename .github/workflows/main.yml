@@ -33,6 +33,7 @@ jobs:
         pip install boto3
         pip install backports.weakref
         pip install backports.functools_lru_cache
+        pip install backports.shutil_get_terminal_size
     #     pip install --upgrade setuptools
     #     pip install backports.functools-lru-cache
     #     pip install backports.weakref
