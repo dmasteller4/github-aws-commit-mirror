@@ -9,7 +9,7 @@ print("Github token: " + GITHUB_API_TOKEN)
 
 github_client = Github(GITHUB_API_TOKEN)
 
-codecommit_client = boto3.client('codecommit', region_name='us-east-1',aws_access_key_id=S3_KEY, aws_secret_access_key=S3_SECRET)
+codecommit_client = boto3.client('codecommit', region_name='us-east-1',aws_access_key_id=AWS_ACCESS_KEY_ID, aws_secret_access_key=AWS_SECRET_ACCESS_KEY)
 
 
 class bcolors:
