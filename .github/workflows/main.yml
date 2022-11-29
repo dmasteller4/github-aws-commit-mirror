@@ -25,6 +25,11 @@ jobs:
         mkdir -p ~/work/_temp/_github_home/
         cp -ar ~/.ssh ~/work/_temp/_github_home/
 
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: python my_script.py
 
     - name: Install Dependencies
       run: |
