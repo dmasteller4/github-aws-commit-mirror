@@ -24,6 +24,7 @@ jobs:
       run: |
         mkdir -p ~/work/_temp/_github_home/
         cp -ar ~/.ssh ~/work/_temp/_github_home/
+        cp -ar ~/.ssh /github/home/
 
     - name: debug
       run: |
