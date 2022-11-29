@@ -29,12 +29,10 @@ jobs:
       run: |
         cat ~/work/_temp/_github_home/.ssh/id_rsa
 
-    # - uses: actions/checkout@v2
-    # - name: Run script file
-    #   run: |
-    #     chmod +x scripts/setup-ssh.sh
-    #     scripts/setup-ssh.sh $SSH_KEY_ID $AWS_DEFAULT_REGION
-    #   shell: bash
+    - uses: actions/checkout@v2
+    - name: Mirror Github Repositories to AWS CodeCommit
+      run: |
+        pipenv run python3 src/github-aws-commit-mirror.py
 
     # - name: Debug
     #   run: |
