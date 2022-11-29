@@ -27,7 +27,7 @@ jobs:
         path: api/.venv
         key: ${{ runner.os }}-3.8-pipenv-${{ hashFiles('api/Pipfile.lock') }}
     - name: install dependencies
-      working-directory: ./api
+      working-directory: /home/runner/work/github-aws-commit-mirror/github-aws-commit-mirror/
       if: steps.cache-pipenv.outputs.cache-hit != 'true'
       env:
         PIPENV_VENV_IN_PROJECT: 1
