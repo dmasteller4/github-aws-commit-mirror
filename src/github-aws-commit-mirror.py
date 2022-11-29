@@ -5,7 +5,7 @@ import os
 GITHUB_API_TOKEN = os.getenv('GH_API_TOKEN')
 
 github_client = Github(GITHUB_API_TOKEN)
-codecommit_client = boto3.client('codecommit')
+codecommit_client = boto3.client('codecommit', region_name='us-east-1')
 
 
 class bcolors:
