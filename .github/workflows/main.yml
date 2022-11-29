@@ -27,6 +27,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        pip install backports.functools-lru-cache
         pip install backports.weakref
         sudo pip install pipenv
         pipenv install
