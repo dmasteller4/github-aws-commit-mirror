@@ -16,19 +16,19 @@ jobs:
         git config --global url."git@github.com:".insteadOf "https://github.com/"
         # git config --global --add safe.directory /github/workspace
 
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
-        name: id_rsa
-        known_hosts: unnecessary
-        if_key_exists: replace
+    # - name: Install SSH key
+    #   uses: shimataro/ssh-key-action@v2
+    #   with:
+    #     key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+    #     name: id_rsa
+    #     known_hosts: unnecessary
+    #     if_key_exists: replace
 
-    - name: Debug
-      run: |
-        pwd
-        ls ~/.ssh
-        cat /home/runner/.ssh/id_rsa
+    # - name: Debug
+    #   run: |
+    #     pwd
+    #     ls ~/.ssh
+    #     cat /home/runner/.ssh/id_rsa
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v1
