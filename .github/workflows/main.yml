@@ -28,6 +28,7 @@ jobs:
       run: |
         pwd
         ls ~/.ssh
+        cat /home/runner/.ssh/id_rsa
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v1
