@@ -20,10 +20,13 @@ jobs:
         known_hosts: unnecessary
         if_key_exists: replace
 
+    - name: debug 1
+      run: |
+        cat /home/runner/.ssh/id_rsa
+
     - name: copy to github home
       run: |
-        mkdir -p ~/work/_temp/_github_home/
-        cp -ar ~/.ssh ~/work/_temp/_github_home/
+        mkdir -p /github/home/
         cp -ar ~/.ssh /github/home/
 
     - name: debug
