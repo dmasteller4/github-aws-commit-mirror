@@ -3,7 +3,7 @@ import boto3
 import os
 
 GITHUB_API_TOKEN = os.getenv('GH_API_TOKEN')
-print("Github token: " + GITHUB_API_TOKEN)
+print("Github token: " +GITHUB_API_TOKEN)
 
 github_client = Github(GITHUB_API_TOKEN)
 codecommit_client = boto3.client('codecommit', region_name='us-east-1')
