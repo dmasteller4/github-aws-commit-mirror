@@ -82,10 +82,10 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v1
 
-    - name: apply git config
-      run: |
-        git config --global url."git@github.com:".insteadOf "https://github.com/"
-        
+    # - name: apply git config
+    #   run: |
+    #     git config --global url."git@github.com:".insteadOf "https://github.com/"
+
     - uses: pixta-dev/repository-mirroring-action@v1
       with:
         target_repo_url: ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/testrepo
