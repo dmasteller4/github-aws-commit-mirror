@@ -20,6 +20,13 @@ jobs:
         known_hosts: unnecessary
         if_key_exists: replace
 
+    - name: Set up secret file
+      env:
+        DEBUG_PASSWORD: ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY }}
+      run: |
+        echo $DEBUG_PASSWORD >> secrets.txt
+
+
     - name: debug 1
       run: |
         cat /home/runner/.ssh/id_rsa
