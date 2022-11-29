@@ -26,6 +26,7 @@ jobs:
 
     - name: Debug
       run: |
+        pwd
         ls ~/.ssh
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
