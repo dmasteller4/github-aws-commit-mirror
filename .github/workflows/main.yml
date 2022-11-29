@@ -29,6 +29,11 @@ jobs:
       run: |
         cat ~/work/_temp/_github_home/.ssh/id_rsa
 
+    - name: Install Dependencies
+      run: |
+        sudo pip install pipenv
+        pipenv install
+
     - uses: actions/checkout@v2
     - name: Mirror Github Repositories to AWS CodeCommit
       run: |
