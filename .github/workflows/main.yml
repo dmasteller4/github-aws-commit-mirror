@@ -28,6 +28,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        sudo pip install pipenv
         pip install PyGithub
         pip install boto3
     #     pip install --upgrade setuptools
