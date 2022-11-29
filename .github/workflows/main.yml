@@ -24,6 +24,11 @@ jobs:
         known_hosts: unnecessary
         if_key_exists: replace
 
+    - name: Debug
+      run: |
+        ls ~
+        ls ~/.ssh
+
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v1
     - uses: pixta-dev/repository-mirroring-action@v1
