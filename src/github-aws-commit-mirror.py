@@ -2,11 +2,14 @@ from github import Github
 import boto3
 import os
 
+aws_access_key_id = os.getenv('GH_API_TOKEN')
+aws_secret_access_key = os.getenv('GH_API_TOKEN')
 GITHUB_API_TOKEN = os.getenv('GH_API_TOKEN')
-print("Github token: " +GITHUB_API_TOKEN)
+print("Github token: " + GITHUB_API_TOKEN)
 
 github_client = Github(GITHUB_API_TOKEN)
-codecommit_client = boto3.client('codecommit', region_name='us-east-1')
+
+codecommit_client = boto3.client('codecommit', region_name='us-east-1',aws_access_key_id=S3_KEY, aws_secret_access_key=S3_SECRET)
 
 
 class bcolors:
